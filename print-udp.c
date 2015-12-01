@@ -464,6 +464,10 @@ udp_print(netdissect_options *ndo, register const u_char *bp, u_int length,
 			udpipaddr_print(ndo, ip, sport, dport);
 			lmp_print(ndo, cp, length);
 			break;
+        case PT_DOMAIN:
+			udpipaddr_print(ndo, ip, sport, dport);
+			ns_print(ndo, (const u_char *)(up + 1), length, 0);
+			break;
 		}
 		return;
 	}

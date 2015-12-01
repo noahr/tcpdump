@@ -1053,6 +1053,8 @@ main(int argc, char **argv)
 				ndo->ndo_packettype = PT_PGM_ZMTP1;
 			else if (ascii_strcasecmp(optarg, "lmp") == 0)
 				ndo->ndo_packettype = PT_LMP;
+			else if (ascii_strcasecmp(optarg, "domain") == 0)
+				ndo->ndo_packettype = PT_DOMAIN;
 			else
 				error("unknown packet type `%s'", optarg);
 			break;
